@@ -254,7 +254,7 @@
     </div>
 
     <div>
-      <form id="contact-form" method="post" action="/contact-handler">
+      <form id="contact-form" method="post" action="/contact-handler.php">
         <div class="form-row">
           <label for="name">Name*</label>
           <input id="name" name="name" type="text" required>
@@ -290,34 +290,52 @@
   </div>
 </section>
 
-<!-- reCAPTCHA v3 API, before </body> -->
+<!-- reCAPTCHA v3 API -->
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 <script>
-  // Called by reCAPTCHA after it generates a token
-  function onSubmit(token) {
-    // Optionally do client-side validation here
+function onSubmit(token) {
     const form = document.getElementById('contact-form');
     const status = document.getElementById('form-status');
-
+    
     if (!form.checkValidity()) {
-      // Let the browser show validation messages
-      status.textContent = 'Please complete all required fields.';
-      return;
+        status.textContent = 'Please complete all required fields.';
+        status.style.color = 'red';
+        return;
     }
 
-    // Optionally append the token to the form as a hidden field
+    // Add token to form
     let tokenInput = form.querySelector('input[name="g-recaptcha-response"]');
     if (!tokenInput) {
-      tokenInput = document.createElement('input');
-      tokenInput.type = 'hidden';
-      tokenInput.name = 'g-recaptcha-response';
-      form.appendChild(tokenInput);
+        tokenInput = document.createElement('input');
+        tokenInput.type = 'hidden';
+        tokenInput.name = 'g-recaptcha-response';
+        form.appendChild(tokenInput);
     }
     tokenInput.value = token;
 
-    form.submit();
-  }
+    // Submit via AJAX for better UX
+    fetch('/contact-handler.php', {
+        method: 'POST',
+        body: new FormData(form)
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            status.textContent = data.success;
+            status.style.color = 'green';
+            form.reset();
+            grecaptcha.reset();
+        } else {
+            status.textContent = data.error || 'Something went wrong.';
+            status.style.color = 'red';
+        }
+    })
+    .catch(() => {
+        status.textContent = 'Network error. Please try again.';
+        status.style.color = 'red';
+    });
+}
 </script>
 >
 <footer class="site-footer">
