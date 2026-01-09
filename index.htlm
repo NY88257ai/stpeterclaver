@@ -1,316 +1,250 @@
-:root {
-  --color-bg: #f7f5f9;
-  --color-bg-alt: #ffffff;
-  --color-primary: #3b2564;
-  --color-accent: #c5a048;
-  --color-text: #222222;
-  --color-muted: #666666;
-  --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.08);
-  --radius: 8px;
-  --max-width: 1100px;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Saint Peter Claver Church – Montclair, NJ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description"
+        content="Saint Peter Claver Church in Montclair, NJ: a diverse, trilingual Catholic community in the Archdiocese of Newark.">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="#top" class="brand">
+      <span class="brand-title">Saint Peter Claver Church</span>
+      <span class="brand-subtitle">Montclair, New Jersey</span>
+    </a>
+    <nav class="main-nav">
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <ul class="nav-links">
+        <li><a href="#mass-times">Mass & Sacraments</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#ministries">Ministries</a></li>
+        <li><a href="#events">Events</a></li>
+        <li><a href="#visit">Visit Us</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
+<main id="top">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="hero-kicker">Unity in <span class="accent">Diversity</span> in Action</p>
+        <h1>Welcome to Saint Peter Claver Church</h1>
+        <p class="hero-text">
+          A diverse, trilingual Catholic community of the Archdiocese of Newark, serving Montclair and the
+          surrounding area since 1931.
+        </p>
+        <div class="hero-actions">
+          <a href="#mass-times" class="btn primary">View Mass Times</a>
+          <a href="#visit" class="btn secondary">Plan Your Visit</a>
+        </div>
+      </div>
+      <div class="hero-media">
+        <!-- Replace with real image -->
+        <div class="hero-image-placeholder">Church Photo</div>
+      </div>
+    </div>
+  </section>
 
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: var(--color-text);
-  background: var(--color-bg);
-  line-height: 1.6;
-}
+  <!-- Quick info strip -->
+  <section class="quick-info">
+    <div class="container quick-grid">
+      <div class="quick-card">
+        <h3>Address</h3>
+        <p>56 Elmwood Avenue<br>Montclair, NJ 07042</p>
+      </div>
+      <div class="quick-card">
+        <h3>Phone</h3>
+        <p>(973) 783-4852</p>
+      </div>
+      <div class="quick-card">
+        <h3>Weekend Masses</h3>
+        <p>English, Spanish, and French/Creole Masses.<br><a href="#mass-times">See full schedule</a></p>
+      </div>
+      <div class="quick-card">
+        <h3>Parish Email</h3>
+        <p><a href="mailto:info@stpeterclaver.com">info@stpeterclaver.com</a></p>
+      </div>
+    </div>
+  </section>
 
-img {
-  max-width: 100%;
-  display: block;
-}
+  <!-- Mass & sacraments -->
+  <section id="mass-times" class="section">
+    <div class="container">
+      <h2>Mass & Sacraments</h2>
+      <div class="two-column">
+        <div>
+          <h3>Mass Schedule</h3>
+          <ul class="list">
+            <li>Saturday Vigil: TBD</li>
+            <li>Sunday: English – TBD</li>
+            <li>Sunday: Spanish – TBD</li>
+            <li>Sunday: French/Creole – TBD</li>
+          </ul>
+          <p class="note">Please contact the parish office for the most current schedule.</p>
+        </div>
+        <div>
+          <h3>Sacraments</h3>
+          <ul class="list">
+            <li>Confession: TBD</li>
+            <li>Baptism: By appointment</li>
+            <li>Marriage: Contact the parish office at least six months in advance</li>
+            <li>Anointing of the Sick: Available upon request</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-a {
-  color: var(--color-primary);
-  text-decoration: none;
-}
+  <!-- About -->
+  <section id="about" class="section section-alt">
+    <div class="container two-column">
+      <div>
+        <h2>About Our Parish</h2>
+        <p>
+          Saint Peter Claver Church was established in 1931 to serve the African American community of greater
+          Montclair, New Jersey. Today, the parish is a trilingual community with Masses in English, Spanish, and
+          French/Creole.
+        </p>
+        <p>
+          Our doors are open to all through various ministries and services that witness to the love of God in our
+          neighborhood and beyond.
+        </p>
+        <a class="text-link" href="#ministries">Explore our ministries</a>
+      </div>
+      <div>
+        <h3>Our Mission</h3>
+        <p>
+          We are one spiritual community called to follow Jesus Christ and to share the Good News in word and deed,
+          rooted in prayer, worship, and service.
+        </p>
+      </div>
+    </div>
+  </section>
 
-a:hover {
-  text-decoration: underline;
-}
+  <!-- Ministries -->
+  <section id="ministries" class="section">
+    <div class="container">
+      <h2>Ministries & Community Life</h2>
+      <p>
+        The parish offers many ways to pray, serve, and grow in faith in English, Spanish, and French/Creole.
+      </p>
+      <div class="card-grid">
+        <article class="card">
+          <h3>Worship & Prayer</h3>
+          <ul class="list">
+            <li>Music Ministry</li>
+            <li>Liturgy of the Hours</li>
+            <li>Prayer Groups (English, Spanish, French/Creole)</li>
+            <li>Healing Ministry</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Formation & Fellowship</h3>
+          <ul class="list">
+            <li>Bible Study</li>
+            <li>Youth Group</li>
+            <li>Women’s Fellowship (English & Spanish)</li>
+            <li>Neo-Catechumenal Community</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Service & Outreach</h3>
+          <ul class="list">
+            <li>Social Concerns Ministry</li>
+            <li>Parishioners for Peace and Justice</li>
+            <li>Food Pantry</li>
+            <li>Partnerships with AA, HomeCorp, NJ Peace Action, MESH</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Cultural & Community Events</h3>
+          <ul class="list">
+            <li>Our Lady of the Angels</li>
+            <li>Saint Peter Claver Day</li>
+            <li>Señor de los Milagros</li>
+            <li>Our Lady of Guadalupe & Las Posadas</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
 
-.container {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0 1.5rem;
-}
+  <!-- Events -->
+  <section id="events" class="section section-alt">
+    <div class="container">
+      <h2>Events & Celebrations</h2>
+      <p>Below are examples from recent and upcoming celebrations; replace dates as your calendar changes.</p>
+      <div class="events-grid">
+        <article class="event">
+          <h3>Our Lady of the Angels</h3>
+          <p><strong>Sunday, August 4, 2024 – 10:00 AM</strong></p>
+          <p>Procession, Mass, and fellowship with food and music in Montclair.</p>
+        </article>
+        <article class="event">
+          <h3>Saint Peter Claver Day</h3>
+          <p><strong>Sunday, September 8, 2024 – 11:00 AM</strong></p>
+          <p>Patronal feast with Mass and community gathering.</p>
+        </article>
+        <article class="event">
+          <h3>Virgen de Guadalupe</h3>
+          <p><strong>Sunday, December 15, 2024 – 11:00 AM</strong></p>
+          <p>Mass with mariachis, food, and Las Mañanitas on December 12 at 5:00 AM.</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
-/* Header */
-.site-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  background: rgba(255, 255, 255, 0.97);
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
-}
+  <!-- Visit / contact -->
+  <section id="visit" class="section">
+    <div class="container two-column">
+      <div>
+        <h2>Visit Us</h2>
+        <p>We invite you to “come and see” the goodness of the Lord in our diverse community.</p>
+        <p>
+          Saint Peter Claver Church<br>
+          56 Elmwood Avenue<br>
+          Montclair, NJ 07042
+        </p>
+        <p><strong>Phone:</strong> (973) 783-4852</p>
+        <p><strong>Email:</strong> <a href="mailto:info@stpeterclaver.com">info@stpeterclaver.com</a></p>
+        <a class="btn primary" href="https://maps.google.com/?q=56+Elmwood+Avenue+Montclair+NJ+07042" target="_blank" rel="noopener">
+          Open in Google Maps
+        </a>
+      </div>
+      <div>
+        <h3>Stay Connected</h3>
+        <ul class="list">
+          <li>Parish bulletin link (PDF or external)</li>
+          <li>Social media links (Facebook, Instagram, etc.)</li>
+          <li>Online giving platform link</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
 
-.header-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.75rem 0;
-}
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <p>&copy; Saint Peter Claver Church, Montclair, NJ.</p>
+    <p>“God so loved the world that he gave his only Son.” John 3:16</p>
+  </div>
+</footer>
 
-.brand {
-  display: flex;
-  flex-direction: column;
-}
-
-.brand-title {
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  font-size: 0.95rem;
-}
-
-.brand-subtitle {
-  font-size: 0.8rem;
-  color: var(--color-muted);
-}
-
-.main-nav {
-  position: relative;
-}
-
-.nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.4rem;
-  cursor: pointer;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1rem;
-  padding: 0;
-  margin: 0;
-}
-
-.nav-links a {
-  font-size: 0.9rem;
-  font-weight: 500;
-}
-
-/* Hero */
-.hero {
-  background: radial-gradient(circle at top left, #4f2d80, #2b1d47);
-  color: #ffffff;
-  padding: 3.5rem 0 3rem;
-}
-
-.hero-inner {
-  display: grid;
-  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
-  gap: 2.5rem;
-  align-items: center;
-}
-
-.hero-kicker {
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.75rem;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.hero h1 {
-  margin: 0.3rem 0 0.75rem;
-  font-size: 2.1rem;
-}
-
-.hero-text {
-  margin-bottom: 1.5rem;
-  max-width: 32rem;
-}
-
-.accent {
-  color: var(--color-accent);
-  font-weight: 600;
-}
-
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.hero-media {
-  display: flex;
-  justify-content: center;
-}
-
-.hero-image-placeholder {
-  width: 100%;
-  min-height: 220px;
-  border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px dashed rgba(255, 255, 255, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.9rem;
-}
-
-/* Buttons */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.55rem 1.2rem;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.btn.primary {
-  background: var(--color-accent);
-  color: #1e1b2f;
-}
-
-.btn.secondary {
-  background: transparent;
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.6);
-}
-
-.btn:hover {
-  filter: brightness(1.05);
-}
-
-/* Sections */
-.section {
-  padding: 3rem 0;
-}
-
-.section-alt {
-  background: var(--color-bg-alt);
-}
-
-.section h2 {
-  margin-top: 0;
-  margin-bottom: 0.75rem;
-  font-size: 1.6rem;
-}
-
-/* Quick info */
-.quick-info {
-  background: var(--color-bg-alt);
-  padding: 1.5rem 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-}
-
-.quick-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
-  gap: 1rem;
-}
-
-.quick-card {
-  padding: 0.75rem 1rem;
-  border-radius: var(--radius);
-  background: #f3f0f8;
-}
-
-/* Layout helpers */
-.two-column {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.75rem;
-}
-
-/* Lists and cards */
-.list {
-  padding-left: 1.1rem;
-  margin: 0.25rem 0 0;
-}
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
-
-.card {
-  background: var(--color-bg-alt);
-  border-radius: var(--radius);
-  padding: 1.25rem;
-  box-shadow: var(--shadow-soft);
-}
-
-/* Events */
-.events-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.25rem;
-}
-
-.event {
-  background: var(--color-bg-alt);
-  border-radius: var(--radius);
-  padding: 1.1rem;
-  box-shadow: var(--shadow-soft);
-}
-
-/* Misc */
-.note {
-  font-size: 0.85rem;
-  color: var(--color-muted);
-}
-
-.text-link {
-  font-weight: 600;
-}
-
-/* Footer */
-.site-footer {
-  background: #1e1830;
-  color: rgba(255, 255, 255, 0.85);
-  padding: 1.5rem 0 2rem;
-  text-align: center;
-  font-size: 0.85rem;
-}
-
-.footer-inner p {
-  margin: 0.25rem 0;
-}
-
-/* Responsive nav */
-@media (max-width: 768px) {
-  .hero-inner {
-    grid-template-columns: 1fr;
+<script>
+  // Simple mobile nav toggle
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.querySelector('.nav-links');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('nav-open');
+    });
   }
-
-  .nav-toggle {
-    display: inline-block;
-  }
-
-  .nav-links {
-    position: absolute;
-    right: 0;
-    top: 100%;
-    background: #ffffff;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0.75rem 1rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    display: none;
-  }
-
-  .nav-links.nav-open {
-    display: flex;
-  }
-}
+</script>
+</body>
+</html>
