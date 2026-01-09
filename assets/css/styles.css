@@ -351,3 +351,16 @@ form {
   transform-origin: left top;
 }
 
+.map-wrapper {
+  margin-top: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+}
+
+.map-wrapper iframe {
+  display: block;
+  width: 100%;
+  border: 0;
+}
+
