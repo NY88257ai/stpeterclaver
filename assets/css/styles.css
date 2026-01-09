@@ -351,6 +351,7 @@ form {
   transform-origin: left top;
 }
 
+/* Google Maps */
 .map-wrapper {
   margin-top: 1rem;
   border-radius: 8px;
@@ -363,4 +364,5 @@ form {
   width: 100%;
   border: 0;
 }
+
 
