@@ -275,68 +275,78 @@
           <textarea id="message" name="message" rows="5" required></textarea>
         </div>
 
-        <!-- reCAPTCHA v3 button binding -->
-        <button
-          class="btn primary g-recaptcha"
-          data-sitekey="YOUR_RECAPTCHA_SITE_KEY"
-          data-callback="onSubmit"
-          data-action="submit">
-          Send Message
-        </button>
-
+        <!-- Place holder section for reCAPTCHA v3 button binding - but REM'ed out for now -->
+        <button type="submit" class="btn primary">Send Message</button>
         <p id="form-status" class="note" aria-live="polite"></p>
       </form>
     </div>
   </div>
 </section>
-
-<!-- reCAPTCHA v3 API -->
-<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
 <script>
-function onSubmit(token) {
-    const form = document.getElementById('contact-form');
-    const status = document.getElementById('form-status');
+  // Mobile nav toggle
+  const toggle = document.querySelector('.nav-toggle');
+  const nav    = document.querySelector('.nav-links');
+
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('nav-open');
+    });
+
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('nav-open');
+      });
+    });
+  }
+
+  // Contact form handler
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
     
-    if (!form.checkValidity()) {
-        status.textContent = 'Please complete all required fields.';
-        status.style.color = 'red';
-        return;
+    const form = this;
+    const status = document.getElementById('form-status');
+    const submitBtn = form.querySelector('button[type="submit"]');
+    
+    // Add timestamp for spam protection
+    let timestampInput = form.querySelector('input[name="timestamp"]');
+    if (!timestampInput) {
+      timestampInput = document.createElement('input');
+      timestampInput.type = 'hidden';
+      timestampInput.name = 'timestamp';
+      form.appendChild(timestampInput);
     }
+    timestampInput.value = Date.now();
 
-    // Add token to form
-    let tokenInput = form.querySelector('input[name="g-recaptcha-response"]');
-    if (!tokenInput) {
-        tokenInput = document.createElement('input');
-        tokenInput.type = 'hidden';
-        tokenInput.name = 'g-recaptcha-response';
-        form.appendChild(tokenInput);
-    }
-    tokenInput.value = token;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    status.textContent = '';
 
-    // Submit via AJAX for better UX
     fetch('/contact-handler.php', {
-        method: 'POST',
-        body: new FormData(form)
+      method: 'POST',
+      body: new FormData(form)
     })
     .then(response => response.json())
     .then(data => {
-        if (data.success) {
-            status.textContent = data.success;
-            status.style.color = 'green';
-            form.reset();
-            grecaptcha.reset();
-        } else {
-            status.textContent = data.error || 'Something went wrong.';
-            status.style.color = 'red';
-        }
+      if (data.success) {
+        status.textContent = data.success;
+        status.style.color = 'green';
+        form.reset();
+      } else {
+        status.textContent = data.error;
+        status.style.color = 'red';
+      }
     })
     .catch(() => {
-        status.textContent = 'Network error. Please try again.';
-        status.style.color = 'red';
+      status.textContent = 'Network error. Please try again.';
+      status.style.color = 'red';
+    })
+    .finally(() => {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Message';
     });
-}
+  });
 </script>
+
 >
 <footer class="site-footer">
   <div class="container footer-inner">
