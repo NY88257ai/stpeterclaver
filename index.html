@@ -352,12 +352,19 @@
 </footer>
 
   <script>
-  // Simple mobile nav toggle
   const toggle = document.querySelector('.nav-toggle');
-  const nav = document.querySelector('.nav-links');
+  const nav    = document.querySelector('.nav-links');
+
   if (toggle && nav) {
     toggle.addEventListener('click', () => {
       nav.classList.toggle('nav-open');
+    });
+
+    // Close menu when a link is clicked (mobile UX)
+    nav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        nav.classList.remove('nav-open');
+      });
     });
   }
 </script>
