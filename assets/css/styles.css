@@ -365,4 +365,31 @@ form {
   border: 0;
 }
 
+.social-links {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.social-icon {
+  width: 22px;
+  height: 22px;
+  fill: #ffffff;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #1877f2; /* Facebook blue */
+}
+
+.social-links a:hover {
+  filter: brightness(1.1);
+}
+
 
