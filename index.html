@@ -229,6 +229,71 @@
   </section>
 </main>
 
+<!-- Contact / contact form -->
+<section id="contact" class="section section-alt">
+  <div class="container two-column">
+    <div>
+      <h2>Contact Us</h2>
+      <p>
+        Have a question, prayer intention, or need information about sacraments or registration?
+        Send us a message and someone from the parish office will follow up.
+      </p>
+      <p>
+        You can also call the parish office at <strong>(973) 783-4852</strong> during office hours.
+      </p>
+    </div>
+
+    <div>
+      <form id="contact-form" method="post" action="/contact-handler">
+        <div class="form-row">
+          <label for="name">Name*</label>
+          <input id="name" name="name" type="text" required>
+        </div>
+
+        <div class="form-row">
+          <label for="email">Email*</label>
+          <input id="email" name="email" type="email" required>
+        </div>
+
+        <div class="form-row">
+          <label for="subject">Subject*</label>
+          <input id="subject" name="subject" type="text" required>
+        </div>
+
+        <div class="form-row">
+          <label for="message">Message*</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+
+        <!-- reCAPTCHA widget -->
+        <div class="form-row">
+          <div class="g-recaptcha"
+               data-sitekey="YOUR_PUBLIC_SITE_KEY_HERE">
+          </div>
+        </div>
+
+        <button type="submit" class="btn primary">Send Message</button>
+
+        <p id="form-status" class="note" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Paste before closing </body> -->
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script>
+  // Optional: lightweight client-side guard to prevent empty submits
+  document.getElementById('contact-form').addEventListener('submit', function (e) {
+    const response = grecaptcha.getResponse();
+    if (!response) {
+      e.preventDefault();
+      document.getElementById('form-status').textContent =
+        'Please complete the reCAPTCHA to submit your message.';
+    }
+  });
+</script>
+  
 <footer class="site-footer">
   <div class="container footer-inner">
     <p>&copy; Saint Peter Claver Church, Montclair, NJ.</p>
