@@ -288,7 +288,7 @@ a:hover {
   margin: 0.25rem 0;
 }
 
-/* Responsive nav */
+/* Responsive nav + mobile spacing */
 @media (max-width: 768px) {
   .hero-inner {
     grid-template-columns: 1fr;
@@ -312,6 +312,19 @@ a:hover {
 
   .nav-links.nav-open {
     display: flex;
+  }
+
+  /* Fix header spacing on mobile */
+  .header-inner {
+    padding: 0.75rem 1.25rem;  /* Adds breathing room from screen edges */
+  }
+
+  .brand-title {
+    font-size: 0.9rem;
+  }
+
+  .brand-subtitle {
+    font-size: 0.75rem;
   }
 }
 
@@ -391,5 +404,6 @@ form {
 .social-links a:hover {
   filter: brightness(1.1);
 }
+
 
 
