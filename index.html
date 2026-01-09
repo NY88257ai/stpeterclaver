@@ -265,14 +265,14 @@
           <textarea id="message" name="message" rows="5" required></textarea>
         </div>
 
-        <!-- reCAPTCHA widget -->
-        <div class="form-row">
-          <div class="g-recaptcha"
-               data-sitekey="YOUR_PUBLIC_SITE_KEY_HERE">
-          </div>
-        </div>
-
-        <button type="submit" class="btn primary">Send Message</button>
+        <!-- reCAPTCHA v3 button binding -->
+        <button
+          class="btn primary g-recaptcha"
+          data-sitekey="YOUR_RECAPTCHA_SITE_KEY"
+          data-callback="onSubmit"
+          data-action="submit">
+          Send Message
+        </button>
 
         <p id="form-status" class="note" aria-live="polite"></p>
       </form>
@@ -280,19 +280,36 @@
   </div>
 </section>
 
-<!-- Paste before closing </body> -->
+<!-- reCAPTCHA v3 API, before </body> -->
 <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 <script>
-  // Optional: lightweight client-side guard to prevent empty submits
-  document.getElementById('contact-form').addEventListener('submit', function (e) {
-    const response = grecaptcha.getResponse();
-    if (!response) {
-      e.preventDefault();
-      document.getElementById('form-status').textContent =
-        'Please complete the reCAPTCHA to submit your message.';
+  // Called by reCAPTCHA after it generates a token
+  function onSubmit(token) {
+    // Optionally do client-side validation here
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('form-status');
+
+    if (!form.checkValidity()) {
+      // Let the browser show validation messages
+      status.textContent = 'Please complete all required fields.';
+      return;
     }
-  });
+
+    // Optionally append the token to the form as a hidden field
+    let tokenInput = form.querySelector('input[name="g-recaptcha-response"]');
+    if (!tokenInput) {
+      tokenInput = document.createElement('input');
+      tokenInput.type = 'hidden';
+      tokenInput.name = 'g-recaptcha-response';
+      form.appendChild(tokenInput);
+    }
+    tokenInput.value = token;
+
+    form.submit();
+  }
 </script>
+>
   
 <footer class="site-footer">
   <div class="container footer-inner">
