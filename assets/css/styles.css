@@ -299,15 +299,19 @@ a:hover {
 
 /* Responsive nav + mobile spacing */
 @media (max-width: 768px) {
-  .hero-inner {
+  /* your existing mobile styles + */
+  .hero-images {
     grid-template-columns: 1fr;
+    gap: 0.75rem;
+    max-width: 100%;
   }
-
-  .nav-toggle {
-    display: inline-block;
+  
+  .hero-images img {
+    height: 180px;
   }
+}
 
-  .nav-links {
+.nav-links {
     position: absolute;
     right: 0;
     top: 100%;
@@ -413,6 +417,7 @@ form {
 .social-links a:hover {
   filter: brightness(1.1);
 }
+
 
 
 
